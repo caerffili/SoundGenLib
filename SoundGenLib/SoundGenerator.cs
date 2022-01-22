@@ -54,7 +54,7 @@ namespace SoundGenLib
                     double theta = t.frequency * TAU / (double)samplesPerSecond;
                     // 'volume' is UInt16 with range 0 thru Uint16.MaxValue ( = 65 535)
                     // we need 'amp' to have the range of 0 thru Int16.MaxValue ( = 32 767)
-                    double amp = t.volume >> 2; // so we simply set amp = volume / 2
+                    double amp = t.volume >> 1; // so we simply set amp = volume / 2
                     int samples = (int)((decimal)samplesPerSecond * t.msDuration / 1000);
 
                     for (int step = 0; step < samples; step++)
